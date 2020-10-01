@@ -1,38 +1,100 @@
-.App {
-  text-align: center;
+/* Border box declaration 
+https://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+html {
+  box-sizing: border-box;
+}
+/* inherit border-box on all elements in the universe and before and after
+ */
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: Arial, Geneva, sans-serif;
+}
+a {
+  color: #2772b0;
+}
+.wrapper {
+  width: 97%;
+  max-width: 1200px;
+  margin: 0 auto;
+  float: none;
+  background-color: #fff;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+header {
+  background-color: black;
+  height: 10vh;
   color: white;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: larger;
+  font-weight: bolder;
 }
 
-.App-link {
-  color: #61dafb;
+div img {
+  width: 100%;
+  max-width: 225px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.row {
+  display: flex;
+  flex-flow: row wrap;
+  flex: 0 1 auto;
+}
+
+[class*='col-'] {
+  flex: 0 0 92%;
+  margin-left: 4%;
+  margin-right: 4%;
+}
+
+/* grid system -- mobile first! */
+
+@media only screen and (min-width: 480px) {
+}
+
+/* Mobile Landscape Screen Sizes */
+@media only screen and (min-width: 480px) {
+  [class*='col-'] {
+    margin-right: 0%;
   }
-  to {
-    transform: rotate(360deg);
+
+  .col-1-2,
+  .col-2 {
+    flex: 0 0 44%;
   }
+  .col-1-4 {
+    flex: 0 0 92%;
+  }
+  .col-3,
+  .col-4 {
+    flex: 0 0 92%;
+  }
+}
+/* Desktop screen Sizes */
+@media only screen and (min-width: 768px) {
+  .col-1-2,
+  .col-1-4 {
+    flex: 0 0 20%;
+  }
+
+  .col-2 {
+    flex: 0 0 44%;
+  }
+
+  .col-3 {
+    flex: 0 0 68%;
+  }
+
+  .col-4 {
+    flex: 0 0 92%;
+  }
+}
+
+.pull-right {
+  float: right;
 }
